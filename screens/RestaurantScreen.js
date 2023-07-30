@@ -88,8 +88,8 @@ const RestaurantScreen = () => {
                 <Text className='font-bold text-xl p-4'>Menu</Text>
                 {dishes?.map(dish => (
                     <DishRow
-                        key={dish.id}
-                        id={dish.id}
+                        key={dish._id}
+                        id={dish._id}
                         name={dish.name}
                         description={dish.short_description}
                         price={dish.price}

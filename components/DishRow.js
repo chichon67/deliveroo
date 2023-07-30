@@ -18,7 +18,8 @@ const DishRow = ({ key, id, name, description, price, image }) => {
 
     }
 
-    console.log(items)
+    //i console.log id and it's undefined, meaning the id is already undefined before coming here. 
+    console.log(id)
 
     return (
         <>
@@ -54,7 +55,6 @@ const DishRow = ({ key, id, name, description, price, image }) => {
                             </TouchableOpacity>
 
                         </View>
-                        <Text>0</Text>
 
                         <Text>{items.length}</Text>
 

@@ -13,8 +13,6 @@ const FeaturedRow = ({ id, title, description }) => {
 
         client.fetch(`
         *[_type == "featured" && _id == $id] {
-    
-    
             ...,
            restaurants[] ->{
              ...,

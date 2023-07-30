@@ -27,12 +27,11 @@ const HomeScreen = () => {
       `
       *[_type == "featured"] {
         ...,
-       restaurants[] ->{
-         ...,
-         dishes[] ->{
-         }
-       }
-     }
+        restaurants[]->{
+          ...,
+          dishes[] ->
+        }
+      }
       `
     ).then(data => {
       setFeaturedCategories(data);
