@@ -8,10 +8,6 @@ export const basketSlice = createSlice({
     },
     reducers: {
         addToBasket: (state, action) => {
-            // Redux Toolkit allows us to write "mutating" logic in reducers. It
-            // doesn't actually mutate the state because it uses the Immer library,
-            // which detects changes to a "draft state" and produces a brand new
-            // immutable state based off those changes
             state.items = [...state.items, action.payload]
         },
         removeFromBasket: (state, action) => {
@@ -25,7 +21,7 @@ export const { addToBasket, removeFromBasket } = basketSlice.actions
 
 export const selectBasketItems = state => state.basket.items;
 
-export const selectBasketItemsWithId = (state, id) => state.basket.items.filter((item) => item._id == id);
+export const selectBasketItemsWithId = (state, id) => state.basket.items.filter((item) => item.id == id);
 
 export default basketSlice.reducer
 

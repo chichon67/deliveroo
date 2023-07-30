@@ -5,7 +5,7 @@ import { Rule } from '@sanity/validation';
 
 export default defineType({
   name: 'restaurant',
-  title: 'Reataurant',
+  title: 'Restaurant',
   type: 'document',
   fields: [
     defineField({
