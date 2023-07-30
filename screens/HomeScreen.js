@@ -10,11 +10,6 @@ import { client } from '../sanity'
 
 
 
-
-
-
-
-
 const HomeScreen = () => {
   const navigation = useNavigation();
 
@@ -35,7 +30,6 @@ const HomeScreen = () => {
        restaurants[] ->{
          ...,
          dishes[] ->{
-           name,
          }
        }
      }
@@ -45,7 +39,6 @@ const HomeScreen = () => {
     })
   }, [])
 
-  console.log(featuredCategories)
 
 
   return (
@@ -88,24 +81,15 @@ const HomeScreen = () => {
         <Categories />
 
         {/* Features Rows  */}
-        <FeaturedRow
-          title='Featured'
-          description='Paid placements from our partners'
-          featuredCategory='featured'
-        />
-        <FeaturedRow
-          title='Tasty Discounts'
-          description="Everyone's been enjoying these juicy discounts!"
-          featuredCategory='featured'
-        />
-        <FeaturedRow
-          title='Offers near you!'
-          description='Why not support your local restaurant tonight!'
-          featuredCategory='featured'
-        />
+        {featuredCategories?.map(category => (
+          <FeaturedRow
+            key={category._id}
+            id={category._id}
+            title={category.name}
+            description={category.short_description}
+          />
 
-
-
+        ))}
 
 
         {/* Featured Rows */}
